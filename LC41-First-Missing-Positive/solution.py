@@ -142,7 +142,8 @@ class Solution:
             # While the current value belongs in our [1, n] range
             # AND it is not already in its rightful home...
             # AND the home it wants to go to doesn't already have the correct
-            # value
+            # value, if we dont do this.... duplicates in the input array will
+            # cause an infinite loop.
             while 1 <= nums[i] <= n and nums[i] != nums[nums[i] - 1]:
                 # Swap it to its rightful home (nums[i] - 1)
                 target = nums[i] - 1
